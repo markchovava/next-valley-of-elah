@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
+import { useAppStore } from "@/store/useAppStore";
 
 const highlights = [
   "24-Hour Response Guarantee",
@@ -10,6 +11,7 @@ const highlights = [
 ];
 
 export default function Hero() {
+  const { openQuoteModal } = useAppStore();
   return (
     <section
       id="hero"

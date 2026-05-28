@@ -16,7 +16,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { brand } = useAppStore();
+  const { brand, openQuoteModal } = useAppStore();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
