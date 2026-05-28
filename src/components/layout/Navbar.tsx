@@ -69,12 +69,13 @@ export default function Navbar() {
             <FaPhone size={12} />
             {brand.phones[0]}
           </a>
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={openQuoteModal}
             className="bg-accent hover:bg-accent-dark text-white px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-200 shadow-lg shadow-accent/30"
           >
             Free Quote
-          </a>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -121,9 +122,7 @@ export default function Navbar() {
                   type="button"
                   onClick={() => {
                     setMenuOpen(false);
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" });
+                    openQuoteModal();
                   }}
                   className="bg-accent text-white px-5 py-2.5 rounded-full text-sm font-semibold text-center"
                 >

@@ -121,8 +121,9 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={openQuoteModal}
               className="group inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 shadow-xl shadow-accent/30 hover:shadow-accent/50 hover:-translate-y-0.5"
             >
               Get a Free Quote
@@ -130,7 +131,7 @@ export default function Hero() {
                 size={14}
                 className="group-hover:translate-x-1 transition-transform duration-200"
               />
-            </a>
+            </button>
             <a
               href="#pricing"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-accent text-white hover:text-accent font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5"
