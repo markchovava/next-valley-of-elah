@@ -8,6 +8,7 @@ import {
   FaTag,
   FaUsers,
 } from "react-icons/fa";
+import { useAppStore } from "@/store/useAppStore";
 
 const features = [
   {
@@ -50,6 +51,7 @@ const fadeInUp = {
 };
 
 export default function About() {
+  const { openQuoteModal } = useAppStore();
   return (
     <section id="about" className="py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,12 +140,13 @@ export default function About() {
                 ))}
               </ul>
               <div className="mt-8 pt-7 border-t border-white/10 flex items-center gap-4">
-                <a
-                  href="#contact"
+                <button
+                  type="button"
+                  onClick={openQuoteModal}
                   className="bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200"
                 >
                   Start a Partnership
-                </a>
+                </button>
                 <a
                   href="#services"
                   className="text-white/60 hover:text-accent text-sm transition-colors"

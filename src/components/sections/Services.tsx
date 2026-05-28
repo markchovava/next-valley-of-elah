@@ -12,6 +12,7 @@ import {
   FaWater,
 } from "react-icons/fa";
 import { MdPestControl } from "react-icons/md";
+import { useAppStore } from "@/store/useAppStore";
 
 const services = [
   {
@@ -80,6 +81,7 @@ const services = [
 ];
 
 export default function Services() {
+  const { openQuoteModal } = useAppStore();
   return (
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -155,12 +157,13 @@ export default function Services() {
             We handle a wide variety of property maintenance tasks. Reach out
             and we'll let you know if we can help.
           </p>
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={openQuoteModal}
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-7 py-3 rounded-full transition-colors duration-200"
           >
             Contact Us
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

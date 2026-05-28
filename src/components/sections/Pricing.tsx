@@ -65,13 +65,7 @@ const monthlyPlans = [
 
 export default function Pricing() {
   const [model, setModel] = useState<Model>("monthly");
-  const { setSelectedPlan } = useAppStore();
-
-  const handleSelectPlan = (planName: string) => {
-    setSelectedPlan(planName);
-    const contactEl = document.getElementById("contact");
-    contactEl?.scrollIntoView({ behavior: "smooth" });
-  };
+  const { openPlanModal, openQuoteModal } = useAppStore();
 
   return (
     <section id="pricing" className="py-24 bg-surface">
@@ -219,12 +213,7 @@ export default function Pricing() {
                     {plan.id === "premium" ? (
                       <button
                         type="button"
-                        onClick={() => {
-                          setSelectedPlan("Premium");
-                          document
-                            .getElementById("contact")
-                            ?.scrollIntoView({ behavior: "smooth" });
-                        }}
+                        onClick={() => openPlanModal("Premium")}
                         className="flex items-center justify-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-full text-sm transition-all duration-200"
                       >
                         <FaPhone size={12} />
@@ -233,7 +222,7 @@ export default function Pricing() {
                     ) : (
                       <button
                         type="button"
-                        onClick={() => handleSelectPlan(plan.name)}
+                        onClick={() => openPlanModal(plan.name)}
                         className={`flex items-center justify-center gap-2 font-semibold py-3 px-6 rounded-full text-sm transition-all duration-200 ${
                           plan.featured
                             ? "bg-accent hover:bg-accent-dark text-white shadow-lg shadow-accent/30"
@@ -314,12 +303,7 @@ export default function Pricing() {
                   </div>
                   <button
                     type="button"
-                    onClick={() => {
-                      setSelectedPlan("Per Job");
-                      document
-                        .getElementById("contact")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
+                    onClick={openQuoteModal}
                     className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3.5 rounded-full text-sm transition-colors duration-200"
                   >
                     Request a Quotation

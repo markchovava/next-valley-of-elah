@@ -17,7 +17,7 @@ export default function WhatsAppButton() {
   const href = `https://wa.me/${waNumber}?text=${waMessage}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9990] flex flex-col items-end gap-2.5">
+    <div className="fixed bottom-6 right-6 z-9990 flex flex-col items-end gap-2.5">
       {/* Tooltip bubble */}
       <AnimatePresence>
         {hovered && (

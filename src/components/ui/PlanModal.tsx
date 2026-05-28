@@ -78,7 +78,7 @@ export default function PlanModal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-9998 bg-black/60 backdrop-blur-sm"
             onClick={closePlanModal}
           />
 
@@ -89,11 +89,15 @@ export default function PlanModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 24 }}
             transition={{ type: "spring", duration: 0.45, bounce: 0.12 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none"
+            className="fixed inset-0 z-9999 flex items-center justify-center p-4 pointer-events-none"
           >
             <div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Select a plan"
               className="pointer-events-auto w-full max-w-3xl max-h-[92vh] overflow-y-auto bg-white rounded-3xl shadow-2xl"
               onClick={(e) => e.stopPropagation()}
+              onKeyDown={(e) => e.stopPropagation()}
             >
               {/* Header */}
               <div className="sticky top-0 bg-white border-b border-zinc-100 px-7 py-5 flex items-center justify-between rounded-t-3xl z-10">
@@ -154,7 +158,10 @@ export default function PlanModal() {
                   {/* Features */}
                   <ul className="space-y-3">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-sm">
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3 text-sm"
+                      >
                         <FaCheckCircle
                           size={13}
                           className={`mt-0.5 shrink-0 ${plan.featured ? "text-accent-light" : "text-accent"}`}
