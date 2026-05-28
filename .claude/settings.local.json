@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\__Projects\\\\11_fix_right\\\\front\\\\src\\\\config\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\__Projects\\\\11_fix_right\\\\front\\\\src\\\\store\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\__Projects\\\\11_fix_right\\\\front\\\\src\\\\components\\\\layout\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\__Projects\\\\11_fix_right\\\\front\\\\src\\\\components\\\\sections\")"
+    ]
+  }
+}
